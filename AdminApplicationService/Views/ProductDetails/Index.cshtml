@@ -1,0 +1,277 @@
+﻿@model IEnumerable<AdminApplicationService.ViewModel.ProductDetailsViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="apple-touch-icon" sizes="180x180" href="~/vendors/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="~/vendors/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="~/vendors/images/favicon-16x16.png">
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="~/vendors/styles/core.css">
+<link rel="stylesheet" type="text/css" href="~/vendors/styles/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="~/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="~/src/plugins/datatables/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="~/vendors/styles/style.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-119386393-1');
+</script>
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Details</h4>
+                    <p class="mb-0">you can find more options <a class="text-primary" href="https://datatables.net/" target="_blank">Click Here</a></p>
+                </div>
+
+                <div class="pb-20">
+                    <table class="data-table table stripe hover nowrap">
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">ImagePath</th>
+                                <th>ProductName</th>
+                                <th>ProductDescription</th>
+                                <th>ProductPrice</th>
+                                <th>ProductMRPPrice</th>
+                                <th>DeliveryCharge</th>
+                                <th>ProductSpecification</th>
+                                <th>Brand</th>
+                                <th>Manufacturer</th>
+                                <th>ModelName</th>
+                                <th>ProductDimentions</th>
+                                <th>RAMSize</th>
+                                <th>ProcessorType</th>
+                                <th>HardwarePlatform</th>
+                                <th>Resolution</th>
+                                <th>MountingHardware</th>
+                                <th>Banner</th>
+                                <th>BestOffer</th>
+                                <th>SearchType</th>
+                                
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td class="table-plus"><img src="@Url.Content(item.ImagePath)" alt="Image 1" ; style="max-width: 100px; max-height: 100px"></td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductDescription)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductPrice) </td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductMRPPrice)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DeliveryCharge)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductSpecification)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Brand)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Manufacturer)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ModelName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductDimentions)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.RAMSize)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ProcessorType)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.HardwarePlatform)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Resolution)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MountingHardware)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Banner)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.BestOffer)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.SearchType)</td>
+                                   
+                                    <td>
+                                        <div class="dropdown">
+                                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                                <i class="dw dw-more"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                                @*<i class="dw dw-eye"></i>*@
+                                                <a class="dropdown-item" href="@Html.ActionLink("Details", "Details", new { id = item.Id })"></a>
+                                                <a class="dropdown-item" href="@Html.ActionLink("Edit", "Edit", new { id = item.Id }) ">@*<i class="dw dw-edit2"></i>*@</a>
+                                                <a class="dropdown-item" href="@Html.ActionLink("Delete", "Delete", new { id = item.Id })">@*<i class="dw dw-delete-3"></i>*@</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            <!-- Checkbox select Datatable End -->
+            <!-- Export Datatable start -->
+            
+            <!-- Export Datatable End -->
+        </div>
+
+    </div>
+</div>
+<script src="~/vendors/scripts/core.js"></script>
+<script src="~/vendors/scripts/script.min.js"></script>
+<script src="~/vendors/scripts/process.js"></script>
+<script src="~/vendors/scripts/layout-settings.js"></script>
+<script src="~/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="~/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+<script src="~/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+<!-- buttons for Export datatable -->
+<script src="~/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+<script src="~/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+<script src="~/src/plugins/datatables/js/buttons.print.min.js"></script>
+<script src="~/src/plugins/datatables/js/buttons.html5.min.js"></script>
+<script src="~/src/plugins/datatables/js/buttons.flash.min.js"></script>
+<script src="~/src/plugins/datatables/js/pdfmake.min.js"></script>
+<script src="~/src/plugins/datatables/js/vfs_fonts.js"></script>
+<!-- Datatable Setting js -->
+<script src="~/vendors/scripts/datatable-setting.js"></script>
+
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductMRPPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryCharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductSpecification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDimentions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAMSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProcessorType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HardwarePlatform)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resolution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountingHardware)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BestOffer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SearchType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductMRPPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductSpecification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDimentions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RAMSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HardwarePlatform)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resolution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MountingHardware)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Banner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BestOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>*@

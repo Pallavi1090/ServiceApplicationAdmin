@@ -1,0 +1,184 @@
+﻿@model AdminApplicationService.ViewModel.RepairformViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RepairformViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.uName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uAlterNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uAlterNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickUpTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickUpTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickUpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickUpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deliverDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deliverDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deliverAddres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deliverAddres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pMrpPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pMrpPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.delivercharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delivercharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pOffers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pOffers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pSpecifications)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pSpecifications)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

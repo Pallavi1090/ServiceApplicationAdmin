@@ -1,0 +1,170 @@
+﻿@model AdminApplicationService.ViewModel.ProductDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductDetailsViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductMRPPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductMRPPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryCharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryCharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSpecification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSpecification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDimentions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDimentions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcessorType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcessorType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HardwarePlatform)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HardwarePlatform)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resolution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resolution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountingHardware)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountingHardware)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BestOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BestOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SearchType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SearchType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id= Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

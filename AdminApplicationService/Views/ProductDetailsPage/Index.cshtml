@@ -1,0 +1,30 @@
+﻿@model AdminApplicationService.ViewModel.Product_DetailsPage
+@{
+    ViewBag.Title = "Index";
+}
+
+@{int i = 0;}
+@foreach (var item in Model.ProductPage)
+{
+    i++;
+    var active = i == 1 ? "active" : "";
+<h2> @item.Banner</h2>
+<h2> @item.BestOffer</h2>
+<h2> @item.Brand</h2>
+<h2> @item.DeliveryCharge</h2>
+<h2> @item.HardwarePlatform</h2>
+@*<h2> url(@Url.Content(item.ImagePath))</h2>*@
+<h2> @item.Manufacturer</h2>
+<h2> @item.ModelName</h2>
+<h2> @item.MountingHardware</h2>
+<h2> @item.ProcessorType</h2>
+<h2> @item.ProductDescription</h2>
+<h2> @item.ProductDimentions</h2>
+<h2> @item.ProductMRPPrice</h2>
+<h2> @item.ProductName</h2>
+<h2> @item.ProductPrice</h2>
+<h2> @item.ProductSpecification</h2>
+<h2> @item.RAMSize</h2>
+<h2> @item.Resolution</h2>
+<h2> @item.SearchType</h2>
+}

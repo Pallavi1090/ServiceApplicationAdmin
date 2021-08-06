@@ -1,0 +1,333 @@
+﻿@model AdminApplicationService.ViewModel.Dashboard
+@{
+    ViewBag.Title = "Report";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>DataTable</h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Enquries List</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                Year 2021
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">January</a>
+                                <a class="dropdown-item" href="#">February</a>
+                                <a class="dropdown-item" href="#">March</a>
+                                <a class="dropdown-item" href="#">April</a>
+                                <a class="dropdown-item" href="#">May</a>
+                                <a class="dropdown-item" href="#">June</a>
+                                <a class="dropdown-item" href="#">July</a>
+                                <a class="dropdown-item" href="#">August</a>
+                                <a class="dropdown-item" href="#">September</a>
+                                <a class="dropdown-item" href="#">October</a>
+                                <a class="dropdown-item" href="#">November</a>
+                                <a class="dropdown-item" href="#">December</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="h4 text-blue mb-30">Background and color</h4>
+            <div class="row clearfix">
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-white bg-primary card-box">
+                            <div class="card-header">Total Customer</div>                            
+                                <div class="card-body">
+                                    <h5 class="card-title text-white">@Model.data.Count()</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-white bg-secondary card-box">
+                            <div class="card-header">New-Order</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-white">@Model.dataNewOrder.Count()</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-white bg-success card-box">
+                            <div class="card-header">On-Going</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-white">@Model.dataOnGoing.Count()</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-black bg-warning card-box">
+                            <div class="card-header">Pending</div>
+                            <div class="card-body">
+                                <h5 class="card-title">@Model.dataPending.Count()</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-white bg-info card-box">
+                            <div class="card-header">Completed</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-white">@Model.dataCompleted.Count()</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-30">
+                    <a href="@Url.Action("Index","RepairForm")">
+                        <div class="card text-white bg-dark card-box">
+                            <div class="card-header">Delivery</div>
+                            <div class="card-body">
+
+                                <h5 class="card-title text-white">@Model.dataDelivery.Count()</h5>                               
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>           
+            <!-- Checkbox select Datatable End -->
+            <!-- Export Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Data Table with Export Buttons</h4>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export nowrap">
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">Name</th>
+                                <th>Age</th>
+                                <th>Office</th>
+                                <th>Address</th>
+                                <th>Start Date</th>
+                                <th>Salart</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-plus">Gloria F. Mead</td>
+                                <td>25</td>
+                                <td>Sagittarius</td>
+                                <td>2829 Trainer Avenue Peoria, IL 61602 </td>
+                                <td>29-03-2018</td>
+                                <td>$162,700</td>
+                            </tr>
+                            <tr>
+                                <td class="table-plus">Andrea J. Cagle</td>
+                                <td>30</td>
+                                <td>Gemini</td>
+                                <td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+                                <td>29-03-2018</td>
+                                <td>$162,700</td>
+                            </tr>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Export Datatable End -->
+        </div>
+
+    </div>
+</div>
+
+@*<h2>Report</h2>
+    @Model.Count()
+<div style="text-align: center">
+        @ViewBag.BranchName
+    </div>
+<section class="content">
+    <div class="container-fluid">
+         Small boxes (Stat box) 
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                 small box 
+                <div class="small-box" style="background-color:mediumorchid;">
+                    <div class="inner">
+                        <h3>@Model.data.Count()</h3>
+                        <p>Total Customer</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="https://localhost:44358/ServiceEngineer/List?Status=New Order" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="@Url.Action("Index","RepairForm")" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                 small box 
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>@Model.dataNewOrder.Count()</h3>
+                        <p>New Order</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="https://localhost:44358/ServiceEngineer/List#NewOrder" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="@Url.Action("list","ServiceEngineer", new {  orderStatus = "New Order"})" mark="new order" class="small-box-footer">more info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+             ./col 
+            <div class="col-lg-3 col-6">
+                 small box 
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>@Model.dataCompleted.Count()<sup style="font-size: 20px"></sup></h3>
+
+                        <p>Completed</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="@Url.Action("List", "ServiceEngineer", new { orderStatus = "Completed"})" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+             ./col 
+            <div class="col-lg-3 col-6">
+                 small box 
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>@Model.dataOnGoing.Count()</h3>
+
+                        <p>On Going</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="@Url.Action("List","ServiceEngineer", new {orderStatus = "OnGoing"})" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+             ./col 
+            <div class="col-lg-3 col-6">
+                 small box 
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>@Model.dataPending.Count()</h3>
+
+                        <p>Pending</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="@Url.Action("List","ServiceEngineer", new { orderStatus = "Pending"})" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                 small box 
+
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>@Model.dataDelivery.Count()<sup style="font-size: 20px"></sup></h3>
+
+                        <p>Delivery</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="@Url.Action("List","ServiceEngineer", new { orderStatus = "Delivery"})" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+
+            </div>
+             ./col 
+        </div>
+         /.row 
+         Main row 
+         /.row (main row) 
+    </div> /.container-fluid 
+</section>*@
+
+<script>
+    (function (document) {
+        'use strict';
+
+        var LightTableFilter = (function (Arr) {
+
+            var _input;
+            var _select;
+
+            function _onInputEvent(e) {
+                _input = e.target;
+                var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                Arr.forEach.call(tables, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filter);
+                    });
+                });
+            }
+
+            function _onSelectEvent(e) {
+                _select = e.target;
+                var tables = document.getElementsByClassName(_select.getAttribute('data-table'));
+                Arr.forEach.call(tables, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filterSelect);
+                    });
+                });
+            }
+
+            function _filter(row) {
+
+                var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+
+            }
+
+            function _filterSelect(row) {
+
+                var text_select = row.textContent.toLowerCase(), val_select = _select.options[_select.selectedIndex].value.toLowerCase();
+                row.style.display = text_select.indexOf(val_select) === -1 ? 'none' : 'table-row';
+
+            }
+
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('light-table-filter');
+                    var selects = document.getElementsByClassName('select-table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputEvent;
+                    });
+                    Arr.forEach.call(selects, function (select) {
+                        select.onchange = _onSelectEvent;
+                    });
+                }
+            };
+        })(Array.prototype);
+
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'complete') {
+                LightTableFilter.init();
+            }
+        });
+
+    })(document);</script>
+
+
